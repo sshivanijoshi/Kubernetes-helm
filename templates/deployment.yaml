@@ -1,0 +1,17 @@
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: acs-helloworld-{{.Release.Name}}
+    spec:
+      containers:
+      - name: acs-helloworld-{{.Release.Name}}
+        image: {{ .Values.image }}
+        ports:
+        - containerPort: 80
+        env:
+        - name: TITLE
+          value: {{ .Values.title }}
+      imagePullSecrets:
+      - name: {{ .Values.imagePullSecret }}
