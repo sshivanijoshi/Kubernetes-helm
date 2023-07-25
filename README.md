@@ -6,7 +6,7 @@ Simple aks-helloworld chart demonstrating image pull secrets.
 Installing the Chart
 Add the Azure Samples chart repository.
 
-helm repo add azure-samples https://azure-samples.github.io/helm-charts/
+helm repo add Kubernetes-helm https://azure-samples.github.io/helm-charts/
 Install the chart.
 
 helm install azure-samples/image-pull-secret --set image=myacr0008.azurecr.io/aks-helloworld --set imagePullSecret=acr-auth
